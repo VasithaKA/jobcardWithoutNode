@@ -89,7 +89,9 @@ router.get('/todayComplete', async (req, res) => {
         }
     }
     res.json({
-        todayCompletedJobsDetails: faultsInAJobs
+        todayAllJobs: todayJobs.length,
+        todayCompletedJobs: faultsInAJobs.length,
+        todayIncompletedJobs: todayJobs.length-faultsInAJobs.length
     })
 })
 
